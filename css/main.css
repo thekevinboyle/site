@@ -1,0 +1,113 @@
+@font-face {
+	font-family: "isoLight";
+	src: url("../fonts/ISOv0.6-Light.woff");
+}
+
+html {
+	cursor: auto;
+	font-family: isoLight;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+body {
+	background-color: #121212;
+	font-size: clamp(100%, 1rem, 24px);
+	color: #fff;
+	margin: 0;
+}
+
+h1 {
+	font-size: clamp(1.75rem, 3vw, 2.1rem);
+	letter-spacing: 8px;
+}
+
+h2{}
+h3{}
+h4{}
+h5{}
+
+p {
+	font-size: clamp(100%, 1rem, 16px);
+}
+
+ a {
+	 color: #fff;
+	 font-family: isoLight;
+	 line-height: 1.6;
+	 text-transform: uppercase;
+	 text-decoration: none;
+ }
+
+ a:hover {
+	 text-decoration: underline;
+ }
+
+ /* flex container to vertically center */
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+}
+
+/* content boxes */
+.box {
+	
+}
+
+.box-footer {
+	padding: 20px;
+	width: 420px;
+}
+
+
+/* cheeky slightly off center box */
+.box-centerish {
+	margin-left: -32px;
+}
+
+/* positioning utilities */
+.tl {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.tr {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.bl {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.br {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.flex {
+	display: flex;
+}
+
+ul {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+}
+
+li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+}
