@@ -13,14 +13,16 @@ html {
 
 body {
 	background-color: #121212;
-	font-size: clamp(100%, 1rem, 24px);
 	color: #fff;
-	margin: 0;
+	font-size: clamp(100%, 1rem, 24px);
+	
 }
 
 h1 {
 	font-size: clamp(1.75rem, 3vw, 2.1rem);
 	letter-spacing: 8px;
+	transition: all .25s ease;
+	
 }
 
 h2{}
@@ -38,76 +40,185 @@ p {
 	 line-height: 1.6;
 	 text-transform: uppercase;
 	 text-decoration: none;
+	 transition: all .2s linear;
  }
 
  a:hover {
 	 text-decoration: underline;
  }
 
- /* flex container to vertically center */
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	height: 100vh;
-	width: 100vw;
-	max-width: 100%;
-}
-
-/* content boxes */
-.box {
-	
-}
-
-.box-footer {
-	padding: 20px;
-	width: 420px;
-}
-
-
-/* cheeky slightly off center box */
-.box-centerish {
-	margin-left: -32px;
-}
-
-/* positioning utilities */
-.tl {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.tr {
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-.bl {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-}
-
-.br {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-}
-
-.flex {
-	display: flex;
-}
-
-ul {
-    display: flex;
-    align-items: stretch; /* Default */
-    justify-content: space-between;
-    width: 100%;
+ ul {
+	text-align: left;
 }
 
 li {
-    display: block;
-    flex: 0 1 auto; /* Default */
+	height: 2em;
+	width: 16em;
+}
+.row {
+	display: flex;
+	
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	justify-content: center;
+	height: 50vh;
+	position: relative;
+	text-align: center;
+}
+
+.box {
+	padding: 24px;
+	position: relative;
+}
+
+.box__bottom {
+	bottom: 0;
+	flex: 1 1 auto;
+	height: 24px;
+	width: 100%;
+}
+
+.contact {
+bottom: 24px;
+margin-bottom: 16px;
+}
+
+.col-item {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	flex: 1;
+}
+
+.has-text-dark {
+	color: #121212;
+}
+
+/* positioning */
+.is-flex {
+	display: flex;
+}
+
+.is-absolute {
+	position: absolute;
+}
+
+/* utilities */
+.has-dark {
+	background-color: #121212;
+}
+
+.has-light {
+	background-color: #fff;
+}
+
+.has-moss {
+	background-color: #b8e994;
+}
+
+.has-deeprose {
+	background-color: #c44569;
+}
+
+.has-gross {
+	color: #BDC581;
+}
+
+.has-steel {
+	background-color: #4b4b4b;
+}
+
+.has-uppercase {
+	text-transform: uppercase;
+}
+
+.p24 {
+	padding: 24px;
+}
+
+/* Piotr Galor Glitch effect: https://codepen.io/pgalor/pen/OeRWJQ */
+
+.glitch:hover {
+	animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+	2%,64%{
+	  transform: translate(2px,0) skew(0deg);
+	}
+	4%,60%{
+	  transform: translate(-2px,0) skew(0deg);
+	}
+	62%{
+	  transform: translate(0,0) skew(5deg); 
+	}
+  }
+  
+  div:before,
+  div:after{
+	content: attr(title);
+	position: absolute;
+	left: 0;
+  }
+  
+  div:before{
+	animation: glitchTop .24s linear infinite;
+	clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+	2%,64%{
+	  transform: translate(2px,-2px);
+	}
+	4%,60%{
+	  transform: translate(-2px,2px);
+	}
+	62%{
+	  transform: translate(13px,-1px) skew(-13deg); 
+	}
+  }
+  
+  div:after{
+	animation: glitchBotom .30s linear infinite;
+	clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+	-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+	2%,64%{
+	  transform: translate(-2px,0);
+	}
+	4%,60%{
+	  transform: translate(-2px,0);
+	}
+	62%{
+	  transform: translate(-22px,5px) skew(21deg); 
+	}
+  }
+
+/* queries */
+@media (min-width: 62em) {
+	.col {
+		flex: 1 0 auto;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+
+	nav {
+		display: flex;
+	}
+	
+	h1 {
+		transform:skew(60deg, -30deg) scaleY(.66667);
+	}
 }
