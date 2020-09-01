@@ -15,6 +15,7 @@ body {
 	background-color: #121212;
 	color: #fff;
 	font-size: clamp(100%, 1rem, 24px);
+	padding: 32px;
 	
 }
 
@@ -22,7 +23,7 @@ h1 {
 	font-size: clamp(1.75rem, 3vw, 2.1rem);
 	/* letter-spacing: 8px; */
 	transition: all .25s ease;
-	
+	margin-bottom: 8px;
 }
 
 h2{}
@@ -32,20 +33,22 @@ h5{}
 
 p {
 	font-size: clamp(100%, 1rem, 16px);
+	line-height: 1.6;
 }
 
- a {
+ a,
+ a:hover,
+ a:active,
+ a:visited {
 	 color: #fff;
+	 cursor: pointer;
 	 font-family: isoLight;
 	 line-height: 1.6;
-	 text-transform: uppercase;
-	 text-decoration: none;
+	 text-decoration: underline;
+	 text-decoration-color: #fff;
 	 transition: all .2s linear;
  }
 
- a:hover {
-	 text-decoration: underline;
- }
 
  ul {
 	text-align: left;
@@ -57,7 +60,6 @@ li {
 }
 .row {
 	display: flex;
-	
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 100%;
@@ -65,10 +67,10 @@ li {
 
 .col {
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	flex-basis: 100%;
 	justify-content: center;
-	height: 50vh;
 	position: relative;
 	text-align: center;
 }
@@ -78,6 +80,13 @@ li {
 	position: relative;
 }
 
+.about {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 64px;
+	text-align: left;
+	
+}
 .contact {
 bottom: 24px;
 margin-bottom: 16px;
@@ -91,6 +100,9 @@ margin-bottom: 16px;
 	flex: 1;
 }
 
+.section-item {
+	text-align: left;
+}
 
 /* positioning */
 .is-flex {
@@ -134,6 +146,9 @@ margin-bottom: 16px;
 	text-transform: uppercase;
 }
 
+.mb24 {
+	margin-bottom: 24px;
+}
 .p24 {
 	padding: 24px;
 }
@@ -156,14 +171,14 @@ margin-bottom: 16px;
 	}
   }
   
-  div:before,
-  div:after{
+  .div-glitch:before,
+  .div-glitch:after{
 	content: attr(title);
 	position: absolute;
 	left: 0;
   }
   
-  div:before{
+  .div-glitch:before{
 	animation: glitchTop .24s linear infinite;
 	clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
@@ -181,7 +196,7 @@ margin-bottom: 16px;
 	}
   }
   
-  div:after{
+  .div-glitch:after{
 	animation: glitchBotom .30s linear infinite;
 	clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 	-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
@@ -204,7 +219,7 @@ margin-bottom: 16px;
 @media (min-width: 62em) {
 	.col {
 		flex: 1 0 auto;
-		align-items: center;
+		align-items: left;
 		justify-content: center;
 		height: 100vh;
 	}
